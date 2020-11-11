@@ -104,6 +104,7 @@ class ActorImporter extends FilePicker {
         });
 
         const currentDirectory = super._inferCurrentDirectory(this.TargetDirectory.target);
+        currentDirectory[1] = this.TargetDirectory.target;  // _inferCurrentDirectory wants to remove the last folder in the hierachy. Doing this probably breaks for some cases, possibly for s3 storage but I'm not really sure how all that works.
 
         await this._browseInternal(
             currentDirectory[0],
