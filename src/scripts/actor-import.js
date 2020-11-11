@@ -77,7 +77,7 @@ class ActorImporter extends FilePicker {
                     label: "Create Actors",
                     callback: dlg => {
                         let formElement = dlg.find("#actor-import-options")[0];
-                        this._startImport(validateForm(formElement));
+                        this._startImport(new FormDataExtended(formElement).toObject());
                     }
                 }
             },
