@@ -76,7 +76,7 @@ class ActorImporter extends FilePicker {
                     icon: '<i class="fas fa-check"></i>',
                     label: "Create Actors",
                     callback: dlg => {
-                        let formElement = dlg[0].children[0];
+                        let formElement = dlg.find("#actor-import-options")[0];
                         this._startImport(validateForm(formElement));
                     }
                 }
